@@ -1,0 +1,15 @@
+schema_version = 1
+id = "nari"
+name = "Nari"
+version = "0.0.1"
+authors = ["nari-lang team <root@nari-lang.org>"]
+description = "Nari language support."
+repository = "https://github.com/nari-lang/zed-nari.git"
+
+[grammars.nari]
+repository = "https://github.com/nari-lang/tree-sitter-nari"
+rev = "master"
+
+[language_servers.nari-lsp]
+name = "nari-lsp"
+language = "Nari"

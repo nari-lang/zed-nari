@@ -1,0 +1,4 @@
+name = "Nari"
+grammar = "nari"
+path_suffixes = ["nari"]
+line_comments = ["// "]
