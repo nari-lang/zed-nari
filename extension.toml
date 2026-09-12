@@ -8,8 +8,26 @@ repository = "https://github.com/nari-lang/zed-nari.git"
 
 [grammars.nari]
 repository = "https://github.com/nari-lang/tree-sitter-nari"
-rev = "master"
+rev = "5a0d8f536ac538b3c97f233b4f5c3c939bc43db6"
 
 [language_servers.nari-lsp]
 name = "nari-lsp"
 language = "Nari"
+
+[debug_adapters.nari]
+schema_path = "debug_adapters/nari.json"
+
+[[capabilities]]
+kind = "process:exec"
+command = "sh"
+args = ["-c", "test -x \"$0\"", "**"]
+
+[[capabilities]]
+kind = "process:exec"
+command = "powershell"
+args = [
+    "-NoProfile",
+    "-Command",
+    "if (Test-Path -LiteralPath $args[0] -PathType Leaf) { exit 0 } else { exit 1 }",
+    "**",
+]

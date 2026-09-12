@@ -1,4 +1,6 @@
 name = "Nari"
 grammar = "nari"
+code_fence_block_name = "nari"
 path_suffixes = ["nari"]
 line_comments = ["// "]
+debuggers = ["nari"]

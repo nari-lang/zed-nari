@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nari debug configuration",
+  "description": "Launch a .nari or .naric file under the Nari debug adapter (nari --dap).",
+  "type": "object",
+  "required": ["program"],
+  "properties": {
+    "program": {
+      "type": "string",
+      "description": "Absolute path to the .nari or .naric file to debug.",
+      "default": "$ZED_FILE"
+    },
+    "stopOnEntry": {
+      "type": "boolean",
+      "description": "Break before executing the first instruction.",
+      "default": true
+    },
+    "args": {
+      "type": "array",
+      "description": "Arguments forwarded to the program.",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "cwd": {
+      "type": "string",
+      "description": "Working directory for the debuggee. Defaults to the worktree root.",
+      "default": "$ZED_WORKTREE_ROOT"
+    },
+    "env": {
+      "type": "object",
+      "description": "Environment variables for the debuggee.",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {}
+    }
+  }
+}
